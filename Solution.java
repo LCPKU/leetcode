@@ -1,27 +1,19 @@
 
 public class Solution {
-     public int RemoveDuplicates(int a[])
-	{
-      int n=a.length;
-	  if(n==0)
-	  {
-		  return 0;
-	  }
-	  int j=0;
-	  for(int i=1;i<n;i++)
-	  {
-		  if(a[j]!=a[i])
-		  {
-			  a[++j]=a[i];
-		  }
-	  }
-	  return j+1;  
-	}
-     public static void main(String[] args)
-     {
-    	 int[] a={1,1,2};
-    	 Solution s=new Solution();
-    	 int u=s.RemoveDuplicates(a);
-    	 System.out.println(u);
-     }
+    public int lengthOfLastWord(String s) {
+        if(s.trim().length()==0||s.length()==0)
+        {
+        	return 0;
+        }
+        String[] ss=s.trim().split(" ");
+        int len=ss.length;
+        return ss[len-1].length();
+    }
+    public static void main(String[] args)
+    {
+    	String s="hello world";
+    	Solution w=new Solution();
+    	int a=w.lengthOfLastWord(s);
+    	System.out.println(a);
+    }
 }
